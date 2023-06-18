@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Polyhack： CARE System Online</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='LOGO.jpg') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'zh-TW', includedLanguages: 'af,am,ar,hy,az,eu,be,bn,bs,bg,ca,ceb,zh-CN,zh-TW,co,hr,cs,da,nl,en,eo,et,tl,fi,fr,fy,gl,ka,de,el,gu,ht,iw,hi,hmn,hu,is,id,it,ja,jv,kn,kk,km,rw,ko,gom,sr,st,sd,sq,su,zu', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        h3 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        p {
+            font-size: 12px;
+            text-align: center;
+            margin: 5px 0;
+        }
+        
+        form {
+            text-align: center;
+        }
+        
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            max-width: 600px;
+            height: 120px; 
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 80%;
+            max-width: 600px;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        select {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            max-width: 600px; 
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .language-selector {
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+        
+        .arrow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .arrow-container span {
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+        
+        .arrow {
+            display: none;
+        }
+        
+        .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+        .popup {
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.5);
+          text-align: left;
+          position: fixed; 
+          top: 5; 
+          left: 5; 
+          width: 85%; 
+          height: 85%; 
+        }
+        
+        .popup .content {
+          max-height: 666px;
+          overflow-y: auto;
+          margin-bottom: 20px;
+          max-width: none;
+        }
+        
+        .popup .content p {
+          font-size: 16px;
+          margin: 0;
+          padding: 10px;
+          border-bottom: 1px solid #ccc;
+        }
+        
+        .popup button {
+          background: #4CAF50;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          position: absolute;
+          bottom: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+        .note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>CARE: Cyberbullying Assessment and Response Engine</h1>
+    <form action="/convert" method="POST">
+        <textarea name="inputText" placeholder="Please paste social media messages that may contain online violence here." style="width: 80%; max-width: 600px;"></textarea>
+        <button type="submit" style="width: 80%; max-width: 600px;">Violent Ingredients Testing and Recommendations</button>
+    </form>
+    <br></br>
+    <p class="note"><b><span style="color: #4CAF50;">[Friendly Reminder] </span></b>The results generated by this system are for reference only and should be reviewed and checked carefully before use.</b></p>
+    <script>
+      var isPopupShown = false;
+    
+      document.querySelector('.arrow-container').addEventListener('click', function () {
+        document.querySelector('select').click();
+      });
+    
+      var overlay = document.querySelector('.overlay');
+      var popup = document.querySelector('.popup');
+      var closeBtn = document.querySelector('.close');
+      var tutorialBtn = document.querySelector('.tutorial-btn');
+    
+      tutorialBtn.addEventListener('click', function() {
+        if (!isPopupShown) {
+          overlay.style.display = 'flex';
+          isPopupShown = true;
+          console.log('isPopupShown:', isPopupShown);
+        }
+      });
+    
+      closeBtn.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        isPopupShown = false;
+        console.log('isPopupShown:', isPopupShown);
+      });
+    </script>
+</body>
+</html>
