@@ -1,29 +1,36 @@
 # CARE_PolyHack2023
 
-Project Name:
+### Project Name:
 CARE(Cyberbullying Assessment and Response Engine)
 
-Group Name:
+### Group Name:
 Forward Roll
 
-Proof of Concept
 
-Forward Roll
-Technical Implementation
-•	Describe the core technical implementation of the proof of concept
-CARE: Cyberbullying Assessment and Response Engine is a Social Media Violence Detection and Mental Health Care System that uses crawling tools to crawl publicly available information on social media. This information is processed by a pre-trained model and an OpenAI GPT model to detect the social media violence component. The system then provides relevant psychological advice to give mental health care to potential victims of social media violence.
-•	Explain the technologies, frameworks, programming languages, or tools utilized in the development process
-o	Social media crawlers: Python based scripts, the webcrawlers.py in our source code is an example of a "Zhihu" website crawler that will crawl the web for potentially violent content in questions and answers. Users can write their own crawlers to crawl other social media feeds.
-o	Language violence detection and psychological care model: We pre-trained the OpenAI GPT3.5 model for violence detection by calling its API. For example, the source code contains statements with the keywords "system" and "agent". The information entered by the user is processed by the language model.
-o	Framework: A local server is built using the Python based Flask backend (see app.py for details). With this backend running, the user's browser will pop up (currently only supported for Windows) to a front-end page written in HTML. The page will have a good user interface.
-o	Programming Languages：Python, HTML, CSS, JavaScript
-o	Tool：Anaconda
-•	Provide an overview of the architecture or system design that supports the proof of concept
+
+# Proof of Concept -- Forward Roll
+
+## Technical Implementation
+### **Describe the core technical implementation of the proof of concept**
+
+- CARE: Cyberbullying Assessment and Response Engine is a Social Media Violence Detection and Mental Health Care System that uses crawling tools to crawl publicly available information on social media. This information is processed by a pre-trained model and an OpenAI GPT model to detect the social media violence component. The system then provides relevant psychological advice to give mental health care to potential victims of social media violence.
+
+### **Explain the technologies, frameworks, programming languages, or tools utilized in the development process**
+- Social media crawlers: Python based scripts, the webcrawlers.py in our source code is an example of a "Zhihu" website crawler that will crawl the web for potentially violent content in questions and answers. Users can write their own crawlers to crawl other social media feeds.
+- Language violence detection and psychological care model: We pre-trained the OpenAI GPT3.5 model for violence detection by calling its API. For example, the source code contains statements with the keywords "system" and "agent". The information entered by the user is processed by the language model.
+- Framework: A local server is built using the Python based Flask backend (see app.py for details). With this backend running, the user's browser will pop up (currently only supported for Windows) to a front-end page written in HTML. The page will have a good user interface.
+- Programming Languages：Python, HTML, CSS, JavaScript
+- Tool：Anaconda
+- Provide an overview of the architecture or system design that supports the proof of concept
 See our demonstration video on YouTube (https://youtu.be/a8w6ul61KLA) for more details. In this video the final system is able to determine social media violence more accurately and give psychological advice with some feasibility.
-Running the Code
-•	For source code: Please make sure that the Python 3 runtime environment is installed on your system. The code calls the OpenAI API Please make sure that the user has obtained the OpenAI API Key. The user can add the API Key to app.py to get support for the language model. The user can add the relevant value to openai.api_key = "sk-xxxxxxxxxxxxxxxxxxx" or to the system environment variable. Please run launcher.py with the Python 3 interpreter and the system will then pip install the necessary libraries before running app.py with the interpreter.
-•	For releases: Please ensure that the Python 3 runtime environment is installed on your system. Users should also add the OpenAI API Key to app.py to get support for the language model. The user interface can then be accessed by running launcher.exe.
-Sources and Claims
+
+## Running the Code
+- **For source code**: 
+Please make sure that the Python 3 runtime environment is installed on your system. The code calls the OpenAI API Please make sure that the user has obtained the OpenAI API Key. The user can add the API Key to app.py to get support for the language model. The user can add the relevant value to openai.api_key = "sk-xxxxxxxxxxxxxxxxxxx" or to the system environment variable. Please run launcher.py with the Python 3 interpreter and the system will then pip install the necessary libraries before running app.py with the interpreter.
+- **For releases**: 
+Please ensure that the Python 3 runtime environment is installed on your system. Users should also add the OpenAI API Key to app.py to get support for the language model. The user interface can then be accessed by running launcher.exe.
+
+## Sources and Claims
 Alzahrani, S., Alzahrani, N., & Alzahrani, A. (2019). Cyberbullying and its influence on academic, social, and emotional development among school students in Saudi Arabia: cross-sectional study. Journal of Medical Internet Research, 21(3), e12435. 
  
 Australian Human Rights Commission. (n.d.). Cyberbullying, Human rights and bystanders. Retrieved from https://humanrights.gov.au/our-work/commission-general/cyberbullying-human-rights-and-bystanders-0 
@@ -61,16 +68,17 @@ Vinney C. (2020). What is the impact of violent media on mental health? Verywell
 Testing Methodologies
 Our tests are presented in our video: https://youtu.be/a8w6ul61KLA.
 
-Limitations and Future Enhancements
-•	Limitations: 
-o	Scalability: Because CARE relies on text crawling and mining technology, its scalability may be limited. As the number of web users increases, CARE may require more computing resources to process large amounts of text data.
-o	Performance: CARE uses natural language processing techniques to explore the help-seeking behaviour of web users, which may affect its performance. Natural language processing is a computationally intensive task that may require significant computational resources to complete quickly.
-o	Known issues: CARE applies care to users who have experienced violence by calling GPT's API, but GPT does not fully understand human emotions and needs. As a result, CARE may not be able to fully meet the needs of users who have experienced violence.
-•	Future Enhancements:
-o	To improve scalability, consider using more advanced text crawling and mining techniques to process large amounts of data more quickly.
-o	To improve performance, consider using faster natural language processing algorithms or more computational resources.
-o	To solve known problems, consider developing more advanced artificial intelligence techniques to better understand human emotions and needs.
-Supporting Materials:
+## Limitations and Future Enhancements
+### Limitations: 
+- Scalability: Because CARE relies on text crawling and mining technology, its scalability may be limited. As the number of web users increases, CARE may require more computing resources to process large amounts of text data.
+- Performance: CARE uses natural language processing techniques to explore the help-seeking behaviour of web users, which may affect its performance. Natural language processing is a computationally intensive task that may require significant computational resources to complete quickly.
+- Known issues: CARE applies care to users who have experienced violence by calling GPT's API, but GPT does not fully understand human emotions and needs. As a result, CARE may not be able to fully meet the needs of users who have experienced violence.
+### Future Enhancements:
+- To improve scalability, consider using more advanced text crawling and mining techniques to process large amounts of data more quickly.
+- To improve performance, consider using faster natural language processing algorithms or more computational resources.
+- To solve known problems, consider developing more advanced artificial intelligence techniques to better understand human emotions and needs.
+
+# Supporting Materials:
 Demonstration: https://youtu.be/a8w6ul61KLA
 
 
