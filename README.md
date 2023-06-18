@@ -6,13 +6,8 @@ CARE(Cyberbullying Assessment and Response Engine)
 Group Name:
 Forward Roll
 
-Group Member:
-WANG, Yanze;
-ZHANG, Zhengyu;
-WANG, Zouheyi;
-Yeung Man Ho Jason
-
 Proof of Concept
+
 Forward Roll
 Technical Implementation
 •	Describe the core technical implementation of the proof of concept
