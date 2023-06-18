@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>Polyhack： CARE System Online</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='LOGO.jpg') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            width: 80%;
+            max-width: 600px;
+            height: 400px; 
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+        
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            width: 80%;
+            max-width: 600px;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CARE Test Results and Advice System</h1>
+    <textarea id="output-textarea" readonly></textarea>
+    <button class="back-button" onclick="location.href = '/';">Return to Main Page</button>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("output-textarea").value = this.responseText;
+            }
+        };
+        xhr.open("GET", "{{ url_for('static', filename='output.txt') }}?_=" + new Date().getTime(), true); 
+        xhr.send();
+    </script>
+</body>
+</html>
